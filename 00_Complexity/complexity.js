@@ -14,16 +14,16 @@ Order of Magnitude
 
 Reduce the following into it's Big-O order of magnitude.
 
-1. 5 + N                    Answer:
-2. N + N^2                  Answer:
-3. 15N + 13N                Answer:
-4. 10000                    Answer:
-5. log(N) + 1               Answer:
-6. log(N) * 3 + 14N + 3     Answer:
-7. Nlog(N) + 3N^2           Answer:
-8. N^3 + log(N^4)           Answer:
-9. N! + 180000N^2           Answer:
-10. 15002^N                 Answer:
+1. 5 + N                    Answer: N
+2. N + N^2                  Answer: N^2
+3. 15N + 13N                Answer: N
+4. 10000                    Answer: 10000
+5. log(N) + 1               Answer: log(N)
+6. log(N) * 3 + 14N + 3     Answer: N
+7. Nlog(N) + 3N^2           Answer: N^2
+8. N^3 + log(N^4)           Answer: N^3
+9. N! + 180000N^2           Answer: N!
+10. 15002^N                 Answer: 15002^N
 
 */
 
