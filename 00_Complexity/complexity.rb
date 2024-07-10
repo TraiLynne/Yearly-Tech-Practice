@@ -95,8 +95,8 @@ p evens([6, 4, 7, 9, 7, 8, 2, 4, 3]) # [6, 4, 8, 2, 4]
 #   [0, 1, -1] --> 0
 #   [] --> 0
 #
-# Time Complexity:
-# Auxiliary Space Complexity:
+# Time Complexity: O(N)
+# Auxiliary Space Complexity: O(1)
 
 def sum(arr)
   total = 0

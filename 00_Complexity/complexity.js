@@ -102,8 +102,8 @@ function evens(arr) {
  *    [0, 1, -1] --> 0
  *    [] --> 0
  *
- *    Time Complexity:
- *    Auxiliary Space Complexity:
+ *    Time Complexity: O(N)
+ *    Auxiliary Space Complexity: O(1)
  */
 
 function sum(arr) {
