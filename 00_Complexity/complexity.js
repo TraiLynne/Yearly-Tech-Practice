@@ -47,8 +47,8 @@ Reduce the following into it's Big-O order of magnitude.
  *     [9, 83, 74], 8 --> -1
  *     [6, 4, 7, 9, 7, 8, 2, 4, 3], 7 --> 2
  *
- *     Time Complexity:
- *     Auxiliary Space Complexity:
+ *     Time Complexity: O(N)
+ *     Auxiliary Space Complexity: O(1)
  */
 
 function indexOf(arr, target) {
