@@ -67,8 +67,8 @@ p index_of([6, 4, 7, 9, 7, 8, 2, 4, 3], 7) # 2
 #    [9, 83, 74] --> [74]
 #    [6, 4, 7, 9, 7, 8, 2, 4, 3] --> [6, 4, 8, 2, 4]
 
-# Time Complexity:
-# Auxiliary Space Complexity:
+# Time Complexity: O(N)
+# Auxiliary Space Complexity: O(N)
 
 def evens(arr)
   results = []
