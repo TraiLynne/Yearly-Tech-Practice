@@ -129,8 +129,8 @@ function sum(arr) {
  *   [12, 25, 40], [20, 37, 45] --> [12, 20, 25, 37, 40, 45]
  *   [10, 13, 24], [12, 35] --> [10, 12, 13, 24, 35]
  *
- *   Time Complexity:
- *   Auxiliary Space Complexity:
+ *   Time Complexity: O(M+N)
+ *   Auxiliary Space Complexity: O(M+N)
  */
 
 function merge(arr1, arr2) {
