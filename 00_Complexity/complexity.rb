@@ -216,8 +216,8 @@ p binary_search([2, 4, 8, 9, 15], 3) # -1
 #   1 --> 1 (1)
 #   9 --> 362880 (9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1)
 
-# Time Complexity:
-# Auxiliary Space Complexity:
+# Time Complexity: O(N!)
+# Auxiliary Space Complexity: O(N)
 
 def factorial(n)
   return 1 if n == 1
