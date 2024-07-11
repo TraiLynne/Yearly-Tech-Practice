@@ -241,8 +241,8 @@ def first_times_last(arr)
   arr[0] * arr[arr.length - 1]
 end
 
-# Time Complexity:
-# Auxiliary Space Complexity:
+# Time Complexity: O(N)
+# Auxiliary Space Complexity: O(N)
 
 def most_frequent_occurrence(str)
   lower_str = str.downcase
