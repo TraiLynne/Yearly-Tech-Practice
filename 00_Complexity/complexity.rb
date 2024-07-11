@@ -203,21 +203,23 @@ p binary_search([1, 3, 4, 5, 8, 9], 5) # 3
 p binary_search([5, 7, 10, 12, 14], 7) # 1
 p binary_search([2, 4, 8, 9, 15], 3) # -1
 
-#    Factorial
-#
-#    Given an input integer n, return the n factorial value.
-#
-#    Parameters
-#    Input: n {Integer}
-#    Output: {Integer}
-#
-#   Examples
-#   5  --> 120 (5 * 4 * 3 * 2 * 1)
-#   1 --> 1 (1)
-#   9 --> 362880 (9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1)
+=begin
+  #    Factorial
+  #
+  #    Given an input integer n, return the n factorial value.
+  #
+  #    Parameters
+  #    Input: n {Integer}
+  #    Output: {Integer}
+  #
+  #   Examples
+  #   5  --> 120 (5 * 4 * 3 * 2 * 1)
+  #   1 --> 1 (1)
+  #   9 --> 362880 (9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1)
 
-# Time Complexity: O(N!)
-# Auxiliary Space Complexity: O(N)
+  # Time Complexity: O(N!)
+  # Auxiliary Space Complexity: O(N)
+=end
 
 def factorial(n)
   return 1 if n == 1
@@ -229,8 +231,8 @@ p factorial(5) # 120
 p factorial(1) # 1
 p factorial(9) # 362880
 
-# Time Complexity:
-# Auxiliary Space Complexity:
+# Time Complexity: O(1)
+# Auxiliary Space Complexity: O(1)
 
 def first_times_last(arr)
   result = nil
