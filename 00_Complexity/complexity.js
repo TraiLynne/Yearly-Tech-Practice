@@ -311,8 +311,8 @@ function nthFibonacci(n) {
 /*
  *  Nth Fibonacci - the return
  *
- *  Time Complexity:
- *  Auxiliary Space Complexity:
+ *  Time Complexity: O(N)
+ *  Auxiliary Space Complexity: O(N)
  */
 
 function nthFibonacci(n) {

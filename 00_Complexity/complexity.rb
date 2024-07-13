@@ -311,8 +311,8 @@ end
 
 # Nth Fibonacci - the return
 #
-# Time Complexity:
-# Auxiliary Space Complexity:
+# Time Complexity: O(N)
+# Auxiliary Space Complexity: O(N)
 def nth_fibonacci(n)
   cache = {}
 
