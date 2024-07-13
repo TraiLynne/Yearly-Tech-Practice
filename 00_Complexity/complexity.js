@@ -261,8 +261,8 @@ function mostFrequentOccurrence(str) {
 /*
  *  Print Unordered Pairs
  *
- *  Time Complexity:
- *  Auxiliary Space Complexity:
+ *  Time Complexity: O(N^2)
+ *  Auxiliary Space Complexity: O(N)
  */
 
 function printUnorderedPairs(array) {

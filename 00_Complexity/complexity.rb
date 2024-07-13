@@ -264,8 +264,8 @@ def most_frequent_occurrence(str)
   most_frequent[0]
 end
 
-# Time Complexity:
-# Auxiliary Space Complexity:
+# Time Complexity: O(N^2)
+# Auxiliary Space Complexity: O(N)
 
 def print_unordered_pairs(arr)
   for i in 0..arr.length - 1
