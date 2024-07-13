@@ -278,8 +278,8 @@ end
 
 # Make Combined Matrix
 #
-# Time Complexity:
-# Auxiliary Space Complexity:
+# Time Complexity: O(MN)
+# Auxiliary Space Complexity: O(MN)
 
 def make_combined_matrix(array_one, array_two)
   result = []
