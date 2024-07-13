@@ -297,8 +297,8 @@ end
 
 # Nth Fibonacci
 #
-# Time Complexity:
-# Auxiliary Space Complexity:
+# Time Complexity: O(N)
+# Auxiliary Space Complexity: O(N)
 def nth_fibonacci(n)
   result = [0, 1]
 
