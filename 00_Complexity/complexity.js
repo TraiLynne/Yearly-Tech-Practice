@@ -14,16 +14,16 @@ Order of Magnitude
 
 Reduce the following into it's Big-O order of magnitude.
 
-1. 5 + N                    Answer:
-2. N + N^2                  Answer:
-3. 15N + 13N                Answer:
-4. 10000                    Answer:
-5. log(N) + 1               Answer:
-6. log(N) * 3 + 14N + 3     Answer:
-7. Nlog(N) + 3N^2           Answer:
-8. N^3 + log(N^4)           Answer:
-9. N! + 180000N^2           Answer:
-10. 15002^N                 Answer:
+1. 5 + N                    Answer: N
+2. N + N^2                  Answer: N^2
+3. 15N + 13N                Answer: N
+4. 10000                    Answer: 10000
+5. log(N) + 1               Answer: log(N)
+6. log(N) * 3 + 14N + 3     Answer: N
+7. Nlog(N) + 3N^2           Answer: N^2
+8. N^3 + log(N^4)           Answer: N^3
+9. N! + 180000N^2           Answer: N!
+10. 15002^N                 Answer: 15002^N
 
 */
 
@@ -47,8 +47,8 @@ Reduce the following into it's Big-O order of magnitude.
  *     [9, 83, 74], 8 --> -1
  *     [6, 4, 7, 9, 7, 8, 2, 4, 3], 7 --> 2
  *
- *     Time Complexity:
- *     Auxiliary Space Complexity:
+ *     Time Complexity: O(N)
+ *     Auxiliary Space Complexity: O(1)
  */
 
 function indexOf(arr, target) {
@@ -74,8 +74,8 @@ function indexOf(arr, target) {
  *     [9, 83, 74] --> [74]
  *     [6, 4, 7, 9, 7, 8, 2, 4, 3] --> [6, 4, 8, 2, 4]
  *
- *     Time Complexity:
- *     Auxiliary Space Complexity:
+ *     Time Complexity: O(N)
+ *     Auxiliary Space Complexity: O(N)
  */
 
 function evens(arr) {
@@ -102,8 +102,8 @@ function evens(arr) {
  *    [0, 1, -1] --> 0
  *    [] --> 0
  *
- *    Time Complexity:
- *    Auxiliary Space Complexity:
+ *    Time Complexity: O(N)
+ *    Auxiliary Space Complexity: O(1)
  */
 
 function sum(arr) {
@@ -129,8 +129,8 @@ function sum(arr) {
  *   [12, 25, 40], [20, 37, 45] --> [12, 20, 25, 37, 40, 45]
  *   [10, 13, 24], [12, 35] --> [10, 12, 13, 24, 35]
  *
- *   Time Complexity:
- *   Auxiliary Space Complexity:
+ *   Time Complexity: O(M+N)
+ *   Auxiliary Space Complexity: O(M+N)
  */
 
 function merge(arr1, arr2) {
@@ -166,8 +166,8 @@ function merge(arr1, arr2) {
  *    [5, 7, 10, 12, 14], 7 --> 1
  *    [2, 4, 8, 9, 15], 3 --> -1
  *
- *   Time Complexity:
- *   Auxiliary Space Complexity:
+ *   Time Complexity: O(log(N))
+ *   Auxiliary Space Complexity: O(1)
  */
 
 function binarySearch(arr, val) {
@@ -200,8 +200,8 @@ function binarySearch(arr, val) {
  *    1 --> 1 (1)
  *    9 --> 362880 (9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1)
  *
- *    Time Complexity:
- *    Auxiliary Space Complexity:
+ *    Time Complexity: O(N!)
+ *    Auxiliary Space Complexity: O(N)
  */
 
 function factorial(n) {
@@ -214,8 +214,8 @@ function factorial(n) {
 /*
  *  First Times Last
  *
- *  Time Complexity:
- *  Auxiliary Space Complexity:
+ *  Time Complexity: O(1)
+ *  Auxiliary Space Complexity: O(1)
  */
 
 function firstTimesLast(arr) {
@@ -231,8 +231,8 @@ function firstTimesLast(arr) {
  *  Most Frequent Occurrence
  *  NOTE: The string only contains letters in it
  *
- *  Time Complexity:
- *  Auxiliary Space Complexity:
+ *  Time Complexity: O(N)
+ *  Auxiliary Space Complexity: O(N)
  */
 
 function mostFrequentOccurrence(str) {
@@ -261,8 +261,8 @@ function mostFrequentOccurrence(str) {
 /*
  *  Print Unordered Pairs
  *
- *  Time Complexity:
- *  Auxiliary Space Complexity:
+ *  Time Complexity: O(N^2)
+ *  Auxiliary Space Complexity: O(N)
  */
 
 function printUnorderedPairs(array) {
@@ -276,8 +276,8 @@ function printUnorderedPairs(array) {
 /*
  *  Make Combined Matrix
  *
- *  Time Complexity:
- *  Auxiliary Space Complexity:
+ *  Time Complexity: O(MN)
+ *  Auxiliary Space Complexity: O(MN)
  */
 
 function makeCombinedMatrix(arr1, arr2) {
@@ -297,8 +297,8 @@ function makeCombinedMatrix(arr1, arr2) {
 /*
  *  Nth Fibonacci
  *
- *  Time Complexity:
- *  Auxiliary Space Complexity:
+ *  Time Complexity: O(N)
+ *  Auxiliary Space Complexity: O(N)
  */
 function nthFibonacci(n) {
   let result = [0, 1];
@@ -311,8 +311,8 @@ function nthFibonacci(n) {
 /*
  *  Nth Fibonacci - the return
  *
- *  Time Complexity:
- *  Auxiliary Space Complexity:
+ *  Time Complexity: O(N)
+ *  Auxiliary Space Complexity: O(N)
  */
 
 function nthFibonacci(n) {
