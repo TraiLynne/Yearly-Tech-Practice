@@ -74,8 +74,24 @@ function unique(arr) {
  */
 
 function wordCount(sentence) {
-  // YOUR WORK HERE
-}
+  // Variables
+  let result = {};
+  let filteredSentence = sentence.split(' ');;
+  let i = 0;
+
+  // Empty String Handler 
+  if(sentence.length < 1){return result}
+
+
+  for(i ; i < filteredSentence.length ; i++){
+    // strip word 
+    let word = filteredSentence[i].toLowerCase().replace(/[^\p{L}\s]/gu,"");
+
+    result[word] ? result[word]++ : result[word] = 1;
+  }
+
+  return result;
+};
 
 
 /**
