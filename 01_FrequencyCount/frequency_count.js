@@ -28,7 +28,23 @@
 'use strict';
 
 function unique(arr) {
-  // YOUR WORK HERE
+  // Variables
+  let tracker = {};
+  let result = [];
+  let i = 0;
+
+  // Update Tracker 
+  for(i; i < arr.length; i++){
+    let item = arr[i];
+    tracker[item] ? tracker[item]++ : tracker[item] = 1;
+  };
+
+  // Collect Keys 
+  for(let key in tracker){
+    result.push(parseInt(key));
+  };
+
+  return result;
 }
 
 
