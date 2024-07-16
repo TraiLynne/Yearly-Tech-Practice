@@ -116,7 +116,29 @@ function wordCount(sentence) {
  */
 
 function rgb(string) {
-  // YOUR WORK HERE
+
+  // Variables
+  let tracker = {
+    r: 0,
+    g: 0,
+    b: 0
+  };
+  let i = 0;
+  
+  // Handle Empty String 
+  if(string.length == 0){ return 0}
+  
+  for(i ; i < string.length ; i++){
+    tracker[string[i]]++
+  }
+
+  // Handle Empty Key 
+  if(tracker['r'] == 0 || tracker['g'] == 0 || tracker['b'] == 0){return 0}
+
+  // Return Lowest value 
+  if(tracker['r'] <= tracker['g'] && tracker['r'] <= tracker['b']){return tracker['r']}
+  if(tracker['g'] <= tracker['r'] && tracker['g'] <= tracker['b']){return tracker['g']}
+  if(tracker['b'] <= tracker['r'] && tracker['b'] <= tracker['g']){return tracker['b']}
 }
 
 
