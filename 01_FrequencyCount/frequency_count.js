@@ -165,7 +165,26 @@ function rgb(string) {
  */
 
 function missingNumber(n, arr) {
-  // YOUR WORK HERE
+  // Variables
+  let tracker = {};
+  let result =[];
+
+  // Create Keys in Tracker
+  for(let i = 1 ; i <= n ; i++){
+    tracker[i] = 0;
+  };
+
+  // Update Tracker 
+  for(let i = 0 ; i < arr.length ; i++){
+    tracker[arr[i]]++;
+  };
+
+  // Extract keys 
+  for(let key in tracker){
+    if(tracker[key] < 1){result.push(parseInt(key))};
+  };
+
+  return(result);
 }
 
 
