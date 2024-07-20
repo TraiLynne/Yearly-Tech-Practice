@@ -408,7 +408,28 @@ function sortDigits(n) {
  */
 
 function getDuplicates(arr) {
-  // YOUR WORK HERE
+  // Variables
+  let result = [];
+  let tracker = {};
+  let i = 0;
+  
+  // Bypass small || empty arrays 
+  if(arr.length < 2){ return result }
+
+  // Update Tracker 
+  for(i ; i < arr.length ; i++){
+    let val = arr[i]
+    tracker[val] ? tracker[val]++ : tracker[val] = 1;
+  }
+
+  // Update result 
+  for(let key in tracker){
+    if(tracker[key] > 1){
+      result.push(parseInt(key));
+    };
+  };
+
+  return result;
 }
 
 
