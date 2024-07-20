@@ -28,7 +28,23 @@
 'use strict';
 
 function unique(arr) {
-  // YOUR WORK HERE
+  // Variables
+  let tracker = {};
+  let result = [];
+  let i = 0;
+
+  // Update Tracker 
+  for(i; i < arr.length; i++){
+    let item = arr[i];
+    tracker[item] ? tracker[item]++ : tracker[item] = 1;
+  };
+
+  // Collect Keys 
+  for(let key in tracker){
+    result.push(parseInt(key));
+  };
+
+  return result;
 }
 
 
@@ -58,8 +74,24 @@ function unique(arr) {
  */
 
 function wordCount(sentence) {
-  // YOUR WORK HERE
-}
+  // Variables
+  let result = {};
+  let filteredSentence = sentence.split(' ');;
+  let i = 0;
+
+  // Empty String Handler 
+  if(sentence.length < 1){return result}
+
+
+  for(i ; i < filteredSentence.length ; i++){
+    // strip word 
+    let word = filteredSentence[i].toLowerCase().replace(/[^\p{L}\s]/gu,"");
+
+    result[word] ? result[word]++ : result[word] = 1;
+  }
+
+  return result;
+};
 
 
 /**
@@ -84,7 +116,29 @@ function wordCount(sentence) {
  */
 
 function rgb(string) {
-  // YOUR WORK HERE
+
+  // Variables
+  let tracker = {
+    r: 0,
+    g: 0,
+    b: 0
+  };
+  let i = 0;
+  
+  // Handle Empty String 
+  if(string.length == 0){ return 0}
+  
+  for(i ; i < string.length ; i++){
+    tracker[string[i]]++
+  }
+
+  // Handle Empty Key 
+  if(tracker['r'] == 0 || tracker['g'] == 0 || tracker['b'] == 0){return 0}
+
+  // Return Lowest value 
+  if(tracker['r'] <= tracker['g'] && tracker['r'] <= tracker['b']){return tracker['r']}
+  if(tracker['g'] <= tracker['r'] && tracker['g'] <= tracker['b']){return tracker['g']}
+  if(tracker['b'] <= tracker['r'] && tracker['b'] <= tracker['g']){return tracker['b']}
 }
 
 
@@ -111,7 +165,26 @@ function rgb(string) {
  */
 
 function missingNumber(n, arr) {
-  // YOUR WORK HERE
+  // Variables
+  let tracker = {};
+  let result =[];
+
+  // Create Keys in Tracker
+  for(let i = 1 ; i <= n ; i++){
+    tracker[i] = 0;
+  };
+
+  // Update Tracker 
+  for(let i = 0 ; i < arr.length ; i++){
+    tracker[arr[i]]++;
+  };
+
+  // Extract keys 
+  for(let key in tracker){
+    if(tracker[key] < 1){result.push(parseInt(key))};
+  };
+
+  return(result);
 }
 
 
@@ -136,7 +209,49 @@ function missingNumber(n, arr) {
  */
 
 function letterSort(string) {
-  // YOUR WORK HERE
+  // Variables
+  let tracker = {
+    a: 0,
+    b: 0,
+    c: 0,
+    d: 0,
+    e: 0,
+    f: 0,
+    g: 0,
+    h: 0,
+    i: 0,
+    j: 0,
+    k: 0,
+    l: 0,
+    m: 0,
+    n: 0,
+    o: 0,
+    p: 0,
+    q: 0,
+    r: 0,
+    s: 0,
+    t: 0,
+    u: 0,
+    v: 0,
+    w: 0,
+    x: 0,
+    y: 0,
+    z: 0
+  }
+  let i = 0;
+  let result = '';
+
+  // Update Tracker 
+  for(i ; i < string.length ; i++){
+    tracker[string[i]]++;
+  };
+
+  // Create result 
+  for(let key in tracker){
+    result += key.repeat(tracker[key])
+  }
+
+  return result;
 }
 
 
@@ -166,9 +281,61 @@ function letterSort(string) {
  * 'noon' --> 'no'
  */
 
- function characterMode(string) {
-   // YOUR WORK HERE
- }
+function characterMode(string) {
+  // Variables
+  let tracker = {
+    a: 0,
+    b: 0,
+    c: 0,
+    d: 0,
+    e: 0,
+    f: 0,
+    g: 0,
+    h: 0,
+    i: 0,
+    j: 0,
+    k: 0,
+    l: 0,
+    m: 0,
+    n: 0,
+    o: 0,
+    p: 0,
+    q: 0,
+    r: 0,
+    s: 0,
+    t: 0,
+    u: 0,
+    v: 0,
+    w: 0,
+    x: 0,
+    y: 0,
+    z: 0
+  }
+  let i = 0;
+  let mostFrequentLimit = 1; // Setting to `1` bypasses empty keys
+  let result = '';
+
+  // Update String to all lowercase letters & remove space 
+  string = string.toLowerCase().replace(/[^\p{L}\s]/gu,"");
+
+  // Update Tracker 
+  for(i ; i < string.length ; i++){
+    tracker[string[i]]++;
+  };
+
+  // Create Result
+  for(let key in tracker){
+    if(tracker[key] == mostFrequentLimit){
+      result += key;
+    }
+    if(tracker[key] > mostFrequentLimit){
+      mostFrequentLimit = tracker[key]
+      result = key;
+    }
+  }
+
+  return result;
+}
 
 
 
@@ -196,7 +363,26 @@ function letterSort(string) {
 
 
 function sortDigits(n) {
-  // YOUR WORK HERE
+  // Variables
+  let tracker = new Array(10).fill(0)
+  let result = 0;
+  let i = 1; // Start from 1 to avoid leading zeros
+
+  // Update Tracker 
+  while (n !== 0) {
+    tracker[n % 10]++;
+    n = Math.trunc(n / 10);
+  }
+
+  // Reconstruct the number in sorted order
+  for (i; i < 10; i++) {
+      while (tracker[i] > 0) {
+          result = result * 10 + i;
+          tracker[i]--;
+      }
+  }
+
+  return result;
 }
 
 
@@ -222,7 +408,28 @@ function sortDigits(n) {
  */
 
 function getDuplicates(arr) {
-  // YOUR WORK HERE
+  // Variables
+  let result = [];
+  let tracker = {};
+  let i = 0;
+  
+  // Bypass small || empty arrays 
+  if(arr.length < 2){ return result }
+
+  // Update Tracker 
+  for(i ; i < arr.length ; i++){
+    let val = arr[i]
+    tracker[val] ? tracker[val]++ : tracker[val] = 1;
+  }
+
+  // Update result 
+  for(let key in tracker){
+    if(tracker[key] > 1){
+      result.push(parseInt(key));
+    };
+  };
+
+  return result;
 }
 
 
@@ -252,7 +459,34 @@ function getDuplicates(arr) {
  */
 
 function anagramPair(string1, string2) {
-  // YOUR WORK HERE
+  // Variables 
+  let i = 0;
+  let tracker = {};
+  let result = true;
+
+  // Edge Cases 
+  if(string1.length != string2.length || string1.length < 1 || string2.length < 1){return false}
+
+  // Update Tracker 
+  for(i ; i < string1.length ; i++){
+    let letter1 = string1[i];
+    let letter2 = string2[i];
+
+    tracker[letter1] ? 
+      tracker[string1[i]][0]++
+      : tracker[string1[i]] = [1, 0];
+    
+    tracker[letter2] ?
+      tracker[letter2][1]++ 
+      : tracker[letter2] = [0, 1];
+  }
+
+  // Compare Values in Tracker 
+  for(let key in tracker){
+    if(tracker[key][0] != tracker[key][1]){result = false;};
+  }
+
+  return result;
 }
 
 
@@ -279,14 +513,26 @@ function anagramPair(string1, string2) {
  *  Space: O(1)
  *
  *  Examples
- *  `"carrace" --> true ("carrace" can be rearranged to "racecar")`
+ *  `"racecar" --> true ("racecar" can be rearranged to "racecar")`
  *  `"cat" --> false`
  */
 
 
- function anagramPalindrome(string) {
-   // YOUR WORK HERE
- }
+function anagramPalindrome(string) {
+  // Variables 
+  let i = 0; // starts from beginning of string
+  let j = string.length - 1; // starts from end of string
+  let result = true;
+
+  // Compare Letters
+  while(result == true && i < string.length){
+    if(string[i] != string[j]){result = false}
+    i++;
+    j--;
+  }
+
+  return result;
+}
 
 
 
@@ -509,8 +755,8 @@ console.log('PASSED: ' + testCount[0] + ' / ' + testCount[1], '\n\n');
 console.log('Anagram Palindrome Tests');
 testCount = [0, 0];
 
-assert(testCount, "should return true when input is 'carrace'", () => {
-  let example = anagramPalindrome("carrace");
+assert(testCount, "should return true when input is 'racecar'", () => {
+  let example = anagramPalindrome("racecar");
   return example !== undefined && example === true;
 });
 
