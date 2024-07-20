@@ -281,9 +281,61 @@ function letterSort(string) {
  * 'noon' --> 'no'
  */
 
- function characterMode(string) {
-   // YOUR WORK HERE
- }
+function characterMode(string) {
+  // Variables
+  let tracker = {
+    a: 0,
+    b: 0,
+    c: 0,
+    d: 0,
+    e: 0,
+    f: 0,
+    g: 0,
+    h: 0,
+    i: 0,
+    j: 0,
+    k: 0,
+    l: 0,
+    m: 0,
+    n: 0,
+    o: 0,
+    p: 0,
+    q: 0,
+    r: 0,
+    s: 0,
+    t: 0,
+    u: 0,
+    v: 0,
+    w: 0,
+    x: 0,
+    y: 0,
+    z: 0
+  }
+  let i = 0;
+  let mostFrequentLimit = 1; // Setting to `1` bypasses empty keys
+  let result = '';
+
+  // Update String to all lowercase letters & remove space 
+  string = string.toLowerCase().replace(/[^\p{L}\s]/gu,"");
+
+  // Update Tracker 
+  for(i ; i < string.length ; i++){
+    tracker[string[i]]++;
+  };
+
+  // Create Result
+  for(let key in tracker){
+    if(tracker[key] == mostFrequentLimit){
+      result += key;
+    }
+    if(tracker[key] > mostFrequentLimit){
+      mostFrequentLimit = tracker[key]
+      result = key;
+    }
+  }
+
+  return result;
+}
 
 
 
