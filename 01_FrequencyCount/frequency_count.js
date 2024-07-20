@@ -513,14 +513,26 @@ function anagramPair(string1, string2) {
  *  Space: O(1)
  *
  *  Examples
- *  `"carrace" --> true ("carrace" can be rearranged to "racecar")`
+ *  `"racecar" --> true ("racecar" can be rearranged to "racecar")`
  *  `"cat" --> false`
  */
 
 
- function anagramPalindrome(string) {
-   // YOUR WORK HERE
- }
+function anagramPalindrome(string) {
+  // Variables 
+  let i = 0; // starts from beginning of string
+  let j = string.length - 1; // starts from end of string
+  let result = true;
+
+  // Compare Letters
+  while(result == true && i < string.length){
+    if(string[i] != string[j]){result = false}
+    i++;
+    j--;
+  }
+
+  return result;
+}
 
 
 
@@ -743,8 +755,8 @@ console.log('PASSED: ' + testCount[0] + ' / ' + testCount[1], '\n\n');
 console.log('Anagram Palindrome Tests');
 testCount = [0, 0];
 
-assert(testCount, "should return true when input is 'carrace'", () => {
-  let example = anagramPalindrome("carrace");
+assert(testCount, "should return true when input is 'racecar'", () => {
+  let example = anagramPalindrome("racecar");
   return example !== undefined && example === true;
 });
 
