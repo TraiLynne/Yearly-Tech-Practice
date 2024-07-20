@@ -459,7 +459,34 @@ function getDuplicates(arr) {
  */
 
 function anagramPair(string1, string2) {
-  // YOUR WORK HERE
+  // Variables 
+  let i = 0;
+  let tracker = {};
+  let result = true;
+
+  // Edge Cases 
+  if(string1.length != string2.length || string1.length < 1 || string2.length < 1){return false}
+
+  // Update Tracker 
+  for(i ; i < string1.length ; i++){
+    let letter1 = string1[i];
+    let letter2 = string2[i];
+
+    tracker[letter1] ? 
+      tracker[string1[i]][0]++
+      : tracker[string1[i]] = [1, 0];
+    
+    tracker[letter2] ?
+      tracker[letter2][1]++ 
+      : tracker[letter2] = [0, 1];
+  }
+
+  // Compare Values in Tracker 
+  for(let key in tracker){
+    if(tracker[key][0] != tracker[key][1]){result = false;};
+  }
+
+  return result;
 }
 
 
