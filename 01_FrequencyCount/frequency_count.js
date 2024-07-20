@@ -363,7 +363,26 @@ function characterMode(string) {
 
 
 function sortDigits(n) {
-  // YOUR WORK HERE
+  // Variables
+  let tracker = new Array(10).fill(0)
+  let result = 0;
+  let i = 1; // Start from 1 to avoid leading zeros
+
+  // Update Tracker 
+  while (n !== 0) {
+    tracker[n % 10]++;
+    n = Math.trunc(n / 10);
+  }
+
+  // Reconstruct the number in sorted order
+  for (i; i < 10; i++) {
+      while (tracker[i] > 0) {
+          result = result * 10 + i;
+          tracker[i]--;
+      }
+  }
+
+  return result;
 }
 
 
