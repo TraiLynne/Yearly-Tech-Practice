@@ -82,7 +82,43 @@ function numberOfOnes(arr) {
 
 
 function closestValue(arr, target) {
-  // YOUR WORK HERE
+	// Variables
+	let start = 0;
+	let end = arr.length - 1;
+	let mid;
+	let midElement;
+	let rNeighbor;
+	let lNeighbor;
+
+  // Edge Cases 
+	if (arr[end] < target) {
+		return arr[end];
+	}
+	if (arr[start] > target) {
+		return arr[start];
+	}
+
+  // Get the closest value 
+	while (start <= end) {
+		mid = Math.floor((start + end) / 2);
+		midElement = arr[mid];
+		lNeighbor = arr[mid - 1];
+		rNeighbor = arr[mid + 1];
+
+		if (midElement < target) {
+			if (rNeighbor < target) {
+				start = mid + 1;
+			} else {
+				return target - lNeighbor <= target - midElement ? lNeighbor : midElement;
+			}
+		} else {
+			if (lNeighbor > target) {
+				end = mid - 1;
+			} else {
+				return target - lNeighbor <= target - midElement ? lNeighbor : midElement;
+			}
+		}
+	}
 }
 
 
@@ -246,6 +282,11 @@ assert(testCount, 'should return closest value for highest number', () => {
 assert(testCount, 'should return closest value for lowest number', () => {
   let example = closestValue([-2, -1, 0], -5);
   return example !== undefined && example === -2;
+});
+
+assert(testCount, 'should pass example test', () => {
+  let example = closestValue([1, 10, 22, 59, 67, 72, 100], 70);
+  return example !== undefined && example === 72;
 });
 
 console.log('PASSED: ' + testCount[0] + ' / ' + testCount[1], '\n\n');
