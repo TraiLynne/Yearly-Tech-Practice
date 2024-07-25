@@ -24,7 +24,36 @@
 
 
 function numberOfOnes(arr) {
-  // YOUR WORK HERE
+
+  // Variables 
+  let start = 0;
+	let end = arr.length - 1;
+	let mid;
+	let result;
+
+  // Edge cases 
+	if (arr[end] === 0) {
+		return 0;
+  }
+
+  if (arr[0] === 1) {
+    return arr.length;
+  }
+
+  // Go through arr to count 1s 
+	while (!result) {
+		mid = Math.floor((start + end) / 2);
+
+		arr[mid] === 0
+			? arr[mid + 1] === 0
+				? (start = mid + 1)
+				: (result = arr.length - 1 - mid)
+			: arr[mid - 1] === 0
+			? (result = arr.length - mid)
+			: (end = mid - 1);
+	}
+
+	return result;
 }
 
 
